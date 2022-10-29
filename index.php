@@ -69,16 +69,9 @@
                                         <th>Action</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>01</td>
-                                        <td>Awhona</td>
-                                        <td>Luthfar Rahman</td>
-                                        <td>Jahanara Begum</td>
-                                        <td>awhona@gmail.com</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                <tbody class="tdata">
+                                    <!-- TODO:  -->
+                                    
                                 </tbody>
                             </table>
                         </div>
