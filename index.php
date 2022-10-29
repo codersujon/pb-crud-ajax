@@ -19,10 +19,15 @@
         <div class="crud py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="student__form bg-light border border-primary rounded p-3">
+                    <div class="col-md-3">
+                        <div class="student__form bg-light border border-primary rounded p-4">
+                            <!-- HEADING START -->
                             <h2 class="py-2 text-center text-primary display-6">Student Form</h2>
-                            <hr>
+                            <!-- MESSAGE START-->
+                            <div class="msg">
+                                
+                            </div>
+                            <!-- FORM START-->
                             <div class="form-group mb-3">
                                 <label for="student_name">Student Name</label>
                                 <input type="text" name="student_name" id="student_name" class="student_name form-control" placeholder="Enter student name">
@@ -42,22 +47,22 @@
                             <div class="form-group mb-3">
                                 <label for="status">Status</label>
                                 <select name="status" id="status" class="status form-control">
-                                    <option value="">------------------- Select Status -------------------</option>
+                                    <option value="">---------- Select Status ----------</option>
                                     <option value="1">Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
                             </div>
                             <div class="form-group mb-3">
-                               <button class="btn btn-primary btn-block w-100" name="add_student">Add Student</button>
+                               <button class="add_student btn btn-primary btn-block w-100" name="add_student">Add Student</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="student__data border border-primary rounded p-3">
-                            <h2 class="py-2 text-center text-primary display-6">Student Data</h2>
-                            <button class="btn btn-dark" name="add_student">Add New</button>
-                            <hr>
-                            <table class="table">
+                            <h2 class="py-2 text-center text-primary display-6">Student Information</h2>
+                            <button class="add_new btn btn-dark mb-3" name="add_new">Add New</button>
+                            <!-- TABLE START -->
+                            <table class="table table-light">
                                 <thead>
                                     <tr>
                                         <th>SL.No</th>
@@ -71,7 +76,7 @@
                                 </thead>
                                 <tbody class="tdata">
                                     <!-- TODO:  -->
-                                    
+                                  
                                 </tbody>
                             </table>
                         </div>
