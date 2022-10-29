@@ -35,13 +35,17 @@
 
                 // Status Dynamic
                 if($student['status'] == 1){
-                    $status = '<button class="btn btn-success btn-sm">Active</button>';
+                    $status = '<button class="btnActive btn btn-success btn-sm" value="'.$student['student_id'].'">
+                        <i class="fa-solid fa-user-check"></i>
+                    </button>';
                 }
                 else{
-                    $status = '<button class="btn btn-warning btn-sm">Inactive</button>';
+                    $status = '<button class="btnInactive btn btn-danger btn-sm" value="'.$student['student_id'].'">
+                        <i class="fa-solid fa-user-xmark"></i>
+                    </button>';
                 }
 
-                $tdata .= '<tr>
+                $tdata .= '<tr class="text-center">
                               <td>'. $sl++ .'</td>
                               <td>'.$student['student_name'].'</td>
                               <td>'.$student['f_name'].'</td>
@@ -49,19 +53,19 @@
                               <td>'.$student['email'].'</td>
                               <td>'.$status.'</td>
                               <td>
-                                <a href="#" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="#" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a>
+                                <button class="btnEdit btn btn-warning btn-sm" value="'.$student['student_id'].'"><i class="fa-solid fa-pen-to-square"></i></button>
+
+                                <button data-bs-toggle="modal" data-bs-target="#forDelete" class="btnDelete btn btn-danger btn-sm" value="'.$student['student_id'].'"><i class="fa-solid fa-trash"></i></button>
                               </td>
                             </tr>';
             }
             echo $tdata;
-
         }else{
             echo '
                 <tr>
                     <td colspan="7">
                         <div class="alert alert-primary text-center">
-                            <strong>Danger:</strong> Empty Student Info!
+                            <strong>Fill Data:</strong> Empty Student Info!
                         </div>
                     </td>
                 </tr>
@@ -69,4 +73,24 @@
         }
     }
 
+    // ACTIVE TO INACTIVE
+    function active(){
+        global $con;
+        $id =  $_POST['id'];
+        $result = $con->query("UPDATE tbl_student SET status = '2' WHERE student_id = '$id'");
+    }
+
+    // INACTIVE TO ACTIVE
+    function inactive(){
+        global $con;
+        $id =  $_POST['id'];
+        $result = $con->query("UPDATE tbl_student SET status = '1' WHERE student_id = '$id'");
+    }
+
+    //DELETE DATA
+    function delete(){
+        global $con;
+        $id = $_POST['id'];
+        $result = $con->query("DELETE FROM `tbl_student` WHERE student_id = '$id' ");
+    }
 ?>

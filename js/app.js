@@ -25,7 +25,7 @@ $(document).ready(function(){
                 show();  // For Loading data again when insert data;
                 $(".msg").html(response);   //html() or append();
                 //MSG fadeOut
-                $(".msg").fadeOut(1500);
+                $(".msg").fadeOut(1000);
                 //After Instert blank the value
                 $(".student_name").val("");
                 $(".f_name").val("");
@@ -51,6 +51,70 @@ $(document).ready(function(){
             }
         });
     }
+
+    // BUTTON ACTIVE TO INACTIVE 
+    $(document).on("click", ".btnActive",function(){
+        var id =  $(this).val();
+
+        // AJAX APPLY
+        $.ajax({
+            url: "function.php",
+            type: "POST",
+            data:{
+                "action": "active",
+                "id": id     // id collect from val;
+            },
+            success: function(data){
+                show();
+            }
+        });
+    });
+
+    // BUTTON INACTIVE TO ACTIVE
+    $(document).on("click", ".btnInactive",function(){
+        var id =  $(this).val();
+
+        // AJAX APPLY
+        $.ajax({
+            url: "function.php",
+            type: "POST",
+            data:{
+                "action": "inactive",
+                "id": id     // id collect from val;
+            },
+            success: function(data){
+                show();
+            }
+        });
+    });
+
+    // ID VALUE STORE TO MODAL BTN
+    $(document).on("click", ".btnDelete",function(){
+        var id =  $(this).val();
+        $(".MbtnDelete").val(id);
+    });
+
+    // MODAL DELETE STUDENT
+    $(document).on("click", ".MbtnDelete",function(){
+        var id =  $(this).val();
+
+        // AJAX APPLY
+        $.ajax({
+            url: "function.php",
+            type: "POST",
+            data:{
+                "action": "delete",
+                "id": id     // id collect from val;
+            },
+            success: function(data){
+                show();
+                $("#forDelete").modal("hide");
+            }
+        });
+    });
+
+
+    
 
 
 });
