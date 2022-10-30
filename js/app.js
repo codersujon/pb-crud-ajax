@@ -1,6 +1,5 @@
 // JQUERY AJAX
 $(document).ready(function(){
-
     // Data Inserted Using Ajax with the class name.
     $(".add_student").click(function(){
         var student_name = $(".student_name").val();
@@ -150,6 +149,4 @@ $(document).ready(function(){
         })
 
     });
-
-    
 });

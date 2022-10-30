@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 29, 2022 at 08:26 PM
+-- Generation Time: Oct 30, 2022 at 12:24 AM
 -- Server version: 5.7.33
 -- PHP Version: 7.4.19
 
@@ -41,7 +41,13 @@ CREATE TABLE `tbl_student` (
 --
 
 INSERT INTO `tbl_student` (`student_id`, `student_name`, `f_name`, `m_name`, `email`, `status`) VALUES
-(4, 'Md. Sujan Ahmed', 'Md. Abdul Motin', 'Jahanara Begum', 'csesujon155@gmail.com', 1);
+(21, 'Md. Sujan Ahmed', 'Luthfar Rahman', 'Zahanara Begum', 'csesujon155@gmail.com', 1),
+(22, 'Alberto', 'M. Clark', 'Pendley', 'AlbertoMClark@dayrep.com ', 1),
+(23, 'Jeremy ', 'F. Duncan', 'Buttram', '     JeremyFDuncan@dayrep.com ', 2),
+(24, 'Matthew', 'S. Banton', 'Todd', 'MatthewSBanton@rhyta.com ', 1),
+(25, 'Karen', 'C. Hall', 'Hall', 'KarenCHall@dayrep.com ', 2),
+(26, 'Gordon', 'E. Cadogan', 'Haley', 'GordonECadogan@rhyta.com ', 1),
+(27, 'L. Brown', 'Jamie ', 'Calloway', 'JamieLBrown@armyspy.com ', 2);
 
 --
 -- Indexes for dumped tables
@@ -61,7 +67,7 @@ ALTER TABLE `tbl_student`
 -- AUTO_INCREMENT for table `tbl_student`
 --
 ALTER TABLE `tbl_student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
