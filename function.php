@@ -19,6 +19,10 @@
             echo '<div class="alert alert-success">
                      <strong>Success:</strong> Student Info Successfully Added!
                   </div>';
+        }else{
+            echo '<div class="alert alert-danger">
+                    <strong>Danger:</strong> Data Not Inserted!
+                </div>';
         }
     }
 
@@ -45,7 +49,7 @@
                     </button>';
                 }
 
-                $tdata .= '<tr class="text-center">
+                $tdata .= '<tr>
                               <td>'. $sl++ .'</td>
                               <td>'.$student['student_name'].'</td>
                               <td>'.$student['f_name'].'</td>

@@ -114,7 +114,42 @@ $(document).ready(function(){
     });
 
 
+     // Add New Student
+     $(document).on("click","#MAddNew",function(){
+        var student_name = $("#Mstudent_name").val();
+        var f_name = $("#Mf_name").val();
+        var m_name = $("#Mm_name").val();
+        var email = $("#Memail").val();
+        var status = $("#Mstatus").val();
+        var action = "insertData";
+
+        $.ajax({
+            url: "function.php",
+            type: "POST",
+            data:{
+                "student_name": student_name,
+                "f_name": f_name,
+                "m_name": m_name,
+                "email": email,
+                "status": status,
+                "action": action
+            },
+            success: function(response){
+                show();  // For Loading data again when insert data;
+                $(".msg").html(response);   //html() or append();
+                //MSG fadeOut
+                $(".msg").fadeOut(0);
+                //After Instert blank the value
+                $("#Mstudent_name").val("");
+                $("#Mf_name").val("");
+                $("#Mm_name").val("");
+                $("#Memail").val("");
+                $("#Mstatus").val("");
+                $("#forInsert").modal("hide");
+            }
+        })
+
+    });
+
     
-
-
 });

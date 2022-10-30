@@ -57,9 +57,9 @@
                 <div class="col-md-9">
                     <div class="student__data border border-primary rounded p-3">
                         <h2 class="py-2 text-center text-primary display-6">Student Information</h2>
-                        <button class="add_new btn btn-dark mb-3" name="add_new">Add New</button>
+                        <button data-bs-toggle="modal" data-bs-target="#forInsert" class="add_new btn btn-dark mb-3" name="add_new">Add New</button>
 
-                        <!-- Modal -->
+                        <!-- MODAL FOR DELETE-->
                         <div class="modal fade" id="forDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -79,8 +79,45 @@
                         </div>
 
 
+                        <!-- MODAL FOR INSERT-->
+                        <div class="modal fade" id="forInsert" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-dark" id="exampleModalLabel">Add New Student</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group m-4">
+                                            <input type="text" id="Mstudent_name" class="form-control" placeholder="Enter student name">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <input type="text" id="Mf_name" class="form-control" placeholder="Enter father's name">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <input type="text" id="Mm_name" class="form-control" placeholder="Enter mother's name">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <input type="text" id="Memail" class="form-control" placeholder="Enter email address">
+                                        </div>
+                                        <div class="form-group m-4">
+                                            <select id="Mstatus" class="form-control">
+                                                <option value="">---------- Select Status ----------</option>
+                                                <option value="1">Active</option>
+                                                <option value="2">Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-success" id="MAddNew">Add</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- TABLE START -->
-                        <table class="table table-light">
+                        <table class="table table-striped" id="example">
                             <thead>
                                 <tr class="text-center">
                                     <th>SL.No</th>
